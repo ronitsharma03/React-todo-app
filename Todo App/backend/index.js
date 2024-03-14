@@ -1,5 +1,5 @@
-import { createTodo, updateTodo } from './types';
-import { todo } from './db';
+const { createTodo, updateTodo } = require('./types');
+const { todo } = require('./db');
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -45,7 +45,7 @@ app.put('/completed', async function(req, res){
         });
     }
 
-    await todo.update({
+    await todo.updateOne({
         _id: req.body.id
     },
     {

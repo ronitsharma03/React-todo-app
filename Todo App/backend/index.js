@@ -5,9 +5,7 @@ const port = 3000;
 app.use(express.json());
 
 app.get('/todos', function(req, res){
-    res.json({
-        msg: "Hi There"
-    });
+    
 });
 
 app.post('/todo', function(req, res){

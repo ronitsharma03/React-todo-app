@@ -11,11 +11,32 @@ app.get('/todos', function(req, res){
 });
 
 app.post('/todo', function(req, res){
+    // const title = req.body.title;
+    // const description = req.body.description;
 
+    // const validated = createTodo.safeParse(title, description);
+
+    const createpayload = req.body;
+    const parsedPayload = createTodo.safeParse(createpayload);
+
+    if(!parsedPayload.success){
+        res.status(411).json({
+            msg: "Wrong inputs"
+        });
+        return;
+    }
 });
 
 app.put('/completed', function(req, res){
 
+    const updatePayload = req.body;
+    const parsedIdPayload = updateTodo.safeParse(updatePayload);
+
+    if(!parsedIdPayload.success){
+        res.status(411).json({
+            msg:"Something up with the inputs"
+        })
+    }
 });
 
 app.listen(port, function(){

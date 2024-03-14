@@ -1,0 +1,12 @@
+
+export function CreateTodo(){
+    return (
+        <div>
+            <input type="text" placeholder="Title"/><br />
+            <input type="text" placeholder="Description"/><br />
+            <button>Add Todo</button><br />
+        </div>
+    );
+}
+
+// export default CreateTodo;
